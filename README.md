@@ -1,3 +1,6 @@
+
+# Clever Logger
+
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
 [![Powered by Mason](https://img.shields.io/endpoint?url=https%3A%2F%2Ftinyurl.com%2Fmason-badge)](https://github.com/felangel/mason)
 [![License: MIT][license_badge]][license_link]
@@ -24,7 +27,7 @@ logInfo('Hello there!');
 ```
 
 This prints this message to the console.
-> [Logger - INFO] Hello there
+> [Logger - INFO] Hello there!
 
 Create a logger and use it to log messages.
 
@@ -76,7 +79,7 @@ Additional values can be stored in the `value` variable of the logger.
 
 By default, the logger has a **Stopwatch** integrated as an extension.
 
-See the example for more information.
+See the [example](https://github.com/RoundedInfinity/clever_logger/blob/main/example/bin/extension.dart) for more information.
 
 ### Custom Printer
 

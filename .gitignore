@@ -6,4 +6,4 @@
 build/
 pubspec.lock
 doc/api/
-.vscode/
+vscode/

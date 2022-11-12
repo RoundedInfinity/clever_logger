@@ -1,7 +1,7 @@
 name: clever_logger
-description: A Very Good Project created by Very Good CLI.
+description: An extendable logger library with colorful prints.
 version: 1.0.0+1
-publish_to: none
+repository: https://github.com/RoundedInfinity/clever_logger
 
 environment:
   sdk: ">=2.18.0 <3.0.0"

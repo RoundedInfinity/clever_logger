@@ -1,6 +1,6 @@
 name: clever_logger
-description: An extendable logger library with colorful prints.
-version: 1.0.0+1
+description: An easy to use, highly extendable logger library with colorful prints.
+version: 1.0.1+1
 repository: https://github.com/RoundedInfinity/clever_logger
 
 environment:

@@ -1,6 +1,6 @@
 import 'package:clever_logger/src/clever_logger.dart';
 
-/// Extention for [CleverLogger] that implements a stopwatch to measure time.
+/// Extension for [CleverLogger] that implements a stopwatch to measure time.
 extension StopwatchExtension on CleverLogger {
   Stopwatch get _watch {
     final watch = values['_stopwatch'] as Stopwatch?;
@@ -15,7 +15,7 @@ extension StopwatchExtension on CleverLogger {
   ///
   /// This is easy way to track the time between different events.
   ///
-  /// To pasue the stopwatch, call [pauseWatch].
+  /// To pause the stopwatch, call [pauseWatch].
   /// To finish the watch, call [finishWatch].
   void startWatch() {
     _watch.start();

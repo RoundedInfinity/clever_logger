@@ -4,7 +4,11 @@ import 'package:clever_logger/extension.dart';
 import 'extension.dart';
 
 // This is your logger. You can define them global or local.
-final logger = CleverLogger('Test Logger');
+final logger = CleverLogger('Test Logger', logActions: [
+  ColorfulPrintAction(
+    printer: EmojiPrinter(),
+  ),
+]);
 
 void main(List<String> arguments) async {
   // The default logger is used for unnamed logging with the `log()` function.
@@ -45,7 +49,7 @@ void main(List<String> arguments) async {
 
   // A custom extension to use this logger to count up.
   // See extension.dart in the example folder to see
-  // how to creare extensions for [CleverLogger]
+  // how to create extensions for [CleverLogger]
   logger.countUp();
   logger.countUp('other');
   logger.resetCount('other');

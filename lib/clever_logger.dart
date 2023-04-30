@@ -1,4 +1,4 @@
-/// 💡 An extendable logger library with colorful prints.
+/// An extendable logger library with colorful prints.
 library clever_logger;
 
 export 'package:logging/logging.dart';

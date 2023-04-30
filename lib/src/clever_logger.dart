@@ -37,13 +37,13 @@ import 'package:logging/logging.dart';
 /// See also:
 /// - [LogAction] an action taken with the log.
 ///  You can extend this class for custom actions.
-/// - [ColorfulPrintAction] the defualt action used for this logger.
+/// - [ColorfulPrintAction] the default action used for this logger.
 ///  You can customize its printer argument for a customized color output.
 /// {@endtemplate}
 class CleverLogger {
   /// {@macro clever_logger}
   ///
-  /// [name] is the idedntifier of the logger.
+  /// [name] is the identifier of the logger.
   /// Loggers should not have the same name.
   ///
   /// [logActions] are responsible for what happens with the logs.
@@ -59,6 +59,7 @@ class CleverLogger {
     List<LogAction> logActions = const [
       ColorfulPrintAction(),
     ],
+    this.shouldLog = true,
   }) {
     hierarchicalLoggingEnabled = true;
 
@@ -78,13 +79,21 @@ class CleverLogger {
 
   late final Logger _logger;
 
+  /// The value of [shouldLog] determines whether
+  /// or not events should be logged.
+  ///
+  /// If [shouldLog] is false, the logger does not log.
+  ///
+  /// This is useful when you want go turn the logger on or off.
+  final bool shouldLog;
+
   /// Additional values stored in this logger.
   /// Can be used to store data for extension methods.
   final Map<String, dynamic> values = {};
 
   /// Logs a message at [level].
   void log(Object? message, [Level level = Level.FINE]) {
-    _logger.log(level, message);
+    if (shouldLog) _logger.log(level, message);
   }
 
   /// Logs a message at [Level.FINE].

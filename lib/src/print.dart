@@ -3,12 +3,12 @@
 import 'package:ansicolor/ansicolor.dart';
 import 'package:clever_logger/clever_logger.dart';
 
-/// A class that formats and prints [LogRecord]s syled in a colorful way.
+/// A class that formats and prints [LogRecord]s styled in a colorful way.
 class CleverPrinter {
-  /// A class that formats and prints [LogRecord]s syled in a colorful way.
+  /// A class that formats and prints [LogRecord]s styled in a colorful way.
   const CleverPrinter();
 
-  /// Prints out the [record] with a syle depending on its [Level].
+  /// Prints out the [record] with a style depending on its [Level].
   ///
   /// When no [Level] fits, the [record] is printed with [printDefault].
   void printLogRecord(LogRecord record) {
@@ -80,5 +80,56 @@ class CleverPrinter {
   void printDefault(LogRecord record) {
     final pen = AnsiPen()..xterm(008);
     print(pen('[${record.loggerName} - ${record.level}] ${record.message}'));
+  }
+}
+
+/// A class that formats and prints [LogRecord]s styled with emojis 🚀.
+class EmojiPrinter extends CleverPrinter {
+  /// A class that formats and prints [LogRecord]s styled with emojis 🚀.
+  const EmojiPrinter();
+  @override
+  void printDefault(LogRecord record) {
+    final pen = AnsiPen()..xterm(008);
+    print(pen('[ 🖨️ ${record.loggerName}] ${record.message}'));
+  }
+
+  @override
+  void printFine(LogRecord record) {
+    final pen = AnsiPen()..xterm(008);
+    print(pen('[ 📝 ${record.loggerName}] ${record.message}'));
+  }
+
+  @override
+  void printInfo(LogRecord record) {
+    final pen = AnsiPen()..xterm(012);
+    print(pen('[ 💡 ${record.loggerName}] ${record.message}'));
+  }
+
+  @override
+  void printConfig(LogRecord record) {
+    final pen = AnsiPen()..xterm(007);
+    print(pen('[ ⚙️ ${record.loggerName}] ${record.message}'));
+  }
+
+  @override
+  void printWarning(LogRecord record) {
+    final pen = AnsiPen()..xterm(209);
+    print(pen('[ ⚠️ ${record.loggerName}] ${record.message}'));
+  }
+
+  @override
+  void printSevere(LogRecord record) {
+    final pen = AnsiPen()..xterm(001);
+    print(pen('[ ⛔ ${record.loggerName}] ${record.message}'));
+    if (record.stackTrace != null) {
+      print(pen(record.stackTrace!));
+    }
+  }
+
+  @override
+  void printShout(LogRecord record) {
+    final pen = AnsiPen()..xterm(013);
+
+    print(pen('[ 📣 ${record.loggerName}] ${record.message}'));
   }
 }

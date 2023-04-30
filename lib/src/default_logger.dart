@@ -1,6 +1,6 @@
 import 'package:clever_logger/clever_logger.dart';
 
-/// The defualt [CleverLogger] used when calling unnamed functions
+/// The default [CleverLogger] used when calling unnamed functions
 /// like [log] or [logInfo].
 late final CleverLogger defaultLogger;
 

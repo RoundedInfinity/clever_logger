@@ -1,6 +1,6 @@
 name: clever_logger
 description: An easy to use, highly extendable logger library with colorful prints.
-version: 1.0.1+1
+version: 1.1.0+1
 repository: https://github.com/RoundedInfinity/clever_logger
 
 environment:
@@ -8,8 +8,8 @@ environment:
 
 dev_dependencies:
   mocktail: ^0.3.0
-  test: ^1.19.2
-  very_good_analysis: ^3.1.0
+  test: ^1.24.2
+  very_good_analysis: 3.1.0
 dependencies:
   ansicolor: ^2.0.1
-  logging: ^1.1.0
+  logging: ^1.1.1

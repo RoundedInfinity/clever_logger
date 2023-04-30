@@ -2,7 +2,7 @@ import 'package:clever_logger/clever_logger.dart';
 
 /// {@template log_action}
 /// A abstract class that represents a action taken
-/// when a new log record is recieved.
+/// when a new log record is received.
 ///
 /// See also:
 /// - [CleverLogger] the logger that uses these actions.
@@ -20,12 +20,12 @@ abstract class LogAction {
   final Level level;
 
   /// A function called when the [CleverLogger]
-  /// recieved a new log (for example when `logInfo` gets called).
+  /// received a new log (for example when `logInfo` gets called).
   void onRecord(LogRecord record) {}
 }
 
 /// {@template colorful_print_action}
-/// A [LogAction] that prints the recieved [LogRecord]
+/// A [LogAction] that prints the received [LogRecord]
 /// to the console using a [CleverPrinter].
 /// {@endtemplate}
 class ColorfulPrintAction extends LogAction {
